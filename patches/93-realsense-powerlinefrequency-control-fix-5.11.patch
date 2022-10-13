@@ -1,0 +1,26 @@
+From 66c7999f767899567d9bdfa4cc5770789ce74716 Mon Sep 17 00:00:00 2001
+From: Dmitry Perchanov <dmitry.perchanov@intel.com>
+Date: Wed, 12 Oct 2022 17:33:46 +0300
+Subject: [PATCH] Bug fix for incomplete PowerLineFrequency enumeration map
+ focal hwe-5.11
+
+Signed-off-by: Dmitry Perchanov <dmitry.perchanov@intel.com>
+---
+ 5.11.0/drivers/media/usb/uvc/uvc_ctrl.c | 1 +
+ 1 file changed, 1 insertion(+)
+
+diff --git a/5.11.0/drivers/media/usb/uvc/uvc_ctrl.c b/5.11.0/drivers/media/usb/uvc/uvc_ctrl.c
+index 011e694..cdb7b73 100644
+--- a/5.11.0/drivers/media/usb/uvc/uvc_ctrl.c
++++ b/5.11.0/drivers/media/usb/uvc/uvc_ctrl.c
+@@ -353,6 +353,7 @@ static const struct uvc_menu_info power_line_frequency_controls[] = {
+ 	{ 0, "Disabled" },
+ 	{ 1, "50 Hz" },
+ 	{ 2, "60 Hz" },
++	{ 3, "Auto" },
+ };
+ 
+ static const struct uvc_menu_info exposure_auto_controls[] = {
+-- 
+2.37.1
+
